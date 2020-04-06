@@ -1,22 +1,21 @@
 import java.util.*;
 
 class Student {
+
+	public static void main(String[] args){
 	String index;
 	String firstName;
 	String lastName;
-
-	//TODO constructor
-	ArrayList<Integer> labPoints = new ArrayList<Integer>( );
+	SLL<Integer> labPoints = new SLL<Integer>();
 	Scanner scanner = new Scanner(System.in);
 	int n = scanner.nextInt();
         for (int i = 0; i < n; i++) {
 		labPoints.insertLast(scanner.nextInt());
 }
-		public Student(String index) {
+
+    public Student(String index) {
 		this.index = index;
 	}
-
-	//TODO seters & getters
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -43,22 +42,20 @@ class Student {
 	}
 
 	public double getAverage() {
-		//TODO
-		return labPoints/5;
+		double suma = 0;
+		SLLNode<Integer> tmp = labPoints.getFirst();
+		while(tmp != null){
+			suma = suma + tmp.element;
+			tmp = tmp.succ; }
+		double prosek = suma/labPoints.length();
 	}
 
 	public boolean hasSignature() {
-		//TODO
-
-		if (labPoints.lenght >= 8)
-			return true;
-		else
-			return false;
-
+        	boolean flag = false;
+		if (labPoints.lenght() >= 8) {
+			return flag = true;
+		}
 	}
 
 
-
-
-
-}
+}}
